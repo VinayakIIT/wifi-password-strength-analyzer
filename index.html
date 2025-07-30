@@ -31,6 +31,7 @@
         <div class="container mx-auto px-4 py-6">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
+                    <!-- WiFi Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a1.5 1.5 0 01-1.027-.545 12.824 12.824 0 01-1.432-2.4 5.161 5.161 0 00-2.4.807A8.993 8.993 0 015 12c0-.736.102-1.447.287-2.118.268-1.323.734-2.545 1.352-3.618a9.566 9.566 0 012.315-2.89 8.253 8.253 0 013.152-1.622 7.812 7.812 0 013.633 0 8.252 8.252 0 013.152 1.622 9.564 9.564 0 012.316 2.89c.617 1.073 1.083 2.295 1.352 3.618.185.671.287 1.382.287 2.118a8.994 8.994 0 01-2.652 6.364 5.164 5.164 0 00-2.4-.807 12.822 12.822 0 01-1.432 2.4 1.5 1.5 0 01-1.027.545l-.667.141a4.5 4.5 0 01-2.884 0l-.667-.141zM12 15a3 3 0 100-6 3 3 0 000 6z" />
                     </svg>
@@ -72,7 +73,7 @@
                                 aria-label="Show or hide password" aria-pressed="false" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268-2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
                         </button>
                     </div>
@@ -104,7 +105,9 @@
                             <h4 class="font-medium text-gray-800 mb-3">Strength Factors</h4>
                             <ul class="space-y-3">
                                 <li class="flex items-start">
-                                    <span id="length-icon" class="text-gray-400 mr-2"></span>
+                                    <span id="length-icon" class="text-gray-400 mr-2">
+                                        <!-- Will update via JS -->
+                                    </span>
                                     <span id="length-text" class="text-sm flex-1">Length: <span class="font-medium">Minimum 8 characters recommended</span></span>
                                 </li>
                                 <li class="flex items-start">
@@ -198,41 +201,98 @@
                 passwordInput.setAttribute('type', type);
                 toggleBtn.setAttribute('aria-pressed', type === 'text'); // update aria-pressed
                 toggleBtn.innerHTML = type === 'password' ? 
-                    '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268-2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>' :
-                    '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268-2.943 9.543-7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>';
+                    '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>' :
+                    '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>';
             });
 
-            // Analyze password using Python backend
-            analyzeBtn.addEventListener('click', async function() {
+            // Analyze password
+            analyzeBtn.addEventListener('click', function() {
                 const password = passwordInput.value.trim();
                 if (!password) {
                     alert('Please enter a password to analyze');
                     return;
                 }
-                try {
-                    analyzeBtn.disabled = true;
-                    analyzeBtn.textContent = 'Analyzing...';
-                    const response = await fetch('fetch("https://wifi-password-strength-analyzer.onrender.com/analyze", {', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ password })
-                    });
-                    if (!response.ok) {
-                        throw new Error('Failed to analyze password');
-                    }
-                    const analysis = await response.json();
-                    showResults(analysis);
-                    resultsSection.classList.remove('hidden');
-                } catch (error) {
-                    alert('Error analyzing password: ' + error.message);
-                } finally {
-                    analyzeBtn.disabled = false;
-                    analyzeBtn.textContent = 'Analyze Security';
-                }
+                const analysis = analyzePassword(password);
+                showResults(analysis);
+                resultsSection.classList.remove('hidden');
             });
 
-            // showResults and updateIcon/updateChart stay unchanged and expect
-            // the analysis keys/values as produced by the Python backend
+            function analyzePassword(password) {
+                const analysis = {
+                    length: password.length,
+                    hasUpper: /[A-Z]/.test(password),
+                    hasLower: /[a-z]/.test(password),
+                    hasNumber: /[0-9]/.test(password),
+                    hasSpecial: /[^A-Za-z0-9]/.test(password),
+                    isCommon: checkCommonPassword(password),
+                    hasSequential: checkSequentialChars(password),
+                    hasRepeated: checkRepeatedChars(password),
+                    entropy: calculateEntropy(password)
+                };
+                // Calculate strength score (0-100)
+                analysis.score = calculateStrengthScore(analysis);
+                return analysis;
+            }
+
+            function calculateStrengthScore(analysis) {
+                let score = 0;
+                // Length contributes up to 30 points (8 chars = 15 pts, 12+ = 30)
+                score += Math.min(30, analysis.length * 2.5);
+                // Character variety contributes up to 30 points
+                let varietyScore = 0;
+                if (analysis.hasUpper) varietyScore += 7.5;
+                if (analysis.hasLower) varietyScore += 7.5;
+                if (analysis.hasNumber) varietyScore += 7.5;
+                if (analysis.hasSpecial) varietyScore += 7.5;
+                score += varietyScore;
+                // Entropy contributes up to 20 points
+                score += Math.min(20, analysis.entropy / 2);
+                // Deductions for common patterns (up to 20 points deduction)
+                let deduction = 0;
+                if (analysis.isCommon) deduction += 10;
+                if (analysis.hasSequential) deduction += 6;
+                if (analysis.hasRepeated) deduction += 4;
+                score = Math.max(0, score - deduction);
+                return Math.min(100, score);
+            }
+
+            function checkCommonPassword(password) {
+                const commonPasswords = [
+                    'password', '123456', '12345678', '1234', 'qwerty', 
+                    '12345', 'letmein', 'welcome', 'admin', 'wifi'
+                ];
+                return commonPasswords.includes(password.toLowerCase());
+            }
+
+            function checkSequentialChars(password) {
+                const sequentialPatterns = [
+                    '123', '234', '345', '456', '567', '678', '789',
+                    'abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij',
+                    '321', '432', '543', '654', '765', '876', '987',
+                    'cba', 'dcb', 'edc', 'fed', 'gfe', 'hgf', 'ihg', 'jih'
+                ];
+                return sequentialPatterns.some(pattern => 
+                    password.toLowerCase().includes(pattern)
+                );
+            }
+
+            function checkRepeatedChars(password) {
+                return (/(.)\1{2,}/).test(password);
+            }
+
+            function calculateEntropy(password) {
+                const charSetSize = getCharSetSize(password);
+                return password.length * Math.log2(charSetSize || 1);
+            }
+
+            function getCharSetSize(password) {
+                let size = 0;
+                if (/[a-z]/.test(password)) size += 26;
+                if (/[A-Z]/.test(password)) size += 26;
+                if (/[0-9]/.test(password)) size += 10;
+                if (/[^A-Za-z0-9]/.test(password)) size += 32; // Approx for common symbols
+                return size;
+            }
 
             function showResults(analysis) {
                 // 1. Reset all improvement tips to hidden at start
@@ -302,9 +362,9 @@
                         datasets: [{
                             label: 'Password Strength Factors',
                             data: [
-                                analysis.length * 4,
+                                analysis.length * 4, // Convert to comparable scale (8=32, 16=64)
                                 (analysis.hasUpper + analysis.hasLower + analysis.hasNumber + analysis.hasSpecial) * 20,
-                                analysis.entropy * 1.2,
+                                analysis.entropy * 1.2, // Scale entropy for visualization
                                 analysis.isCommon ? 0 : 100,
                                 (analysis.hasSequential || analysis.hasRepeated) ? 30 : 90
                             ],
