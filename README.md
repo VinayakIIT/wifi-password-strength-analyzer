@@ -1,5 +1,5 @@
 # WiFi Security Analyzer
-Website Link-https://vinayakiit.github.io/wifi-password-strength-analyzer/
+Website Link- https://vinayakiit.github.io/wifi-password-strength-analyzer/
 A web-based tool for evaluating the strength of WiFi passwords. The frontend provides a user-friendly interface to enter passwords and visualize analysis results, while a Python Flask backend performs robust password strength checks including length, complexity, entropy, common pattern detection, and breach simulation.
 
 ---
