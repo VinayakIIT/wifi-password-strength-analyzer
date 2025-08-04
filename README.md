@@ -14,7 +14,6 @@ A web-based tool for evaluating the strength of WiFi passwords. The frontend pro
 - [Security & Privacy](#security--privacy)  
 - [Troubleshooting](#troubleshooting)  
 - [Future Enhancements](#future-enhancements)
-- 
 ## Project Overview
 
 WiFi networks are ubiquitous, but many remain vulnerable due to weak passwords. This project helps users assess the security of their WiFi passwords with detailed feedback and actionable improvement suggestions, balancing usability and security.
@@ -82,23 +81,9 @@ The password analysis is executed on a Python Flask backend to ensure consistent
 - Modern web browser (Chrome, Firefox, Edge, Safari)
 
 ### Backend Setup
-
-1. **Clone or download** the project repository.
-
-2. **Navigate to the backend directory** (folder with `app.py`):
-
-
-3. **Install dependencies:**
-
-
-4. **Start the backend server:**
-
-
-You should see this output:
-
-Running on http://127.0.0.1:5000/
-
-
+i have created a automated backend server that deploy automactically when we start the website at render.com
+my render link is also here 
+https://wifi-password-strength-analyzer.onrender.com
 ### Frontend Setup
 
 - Simply **open `index.html`** (or the provided HTML file) with your preferred browser.  
